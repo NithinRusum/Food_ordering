@@ -41,11 +41,12 @@ class Restaurant(models.Model):
 		
 class Item(models.Model):
 	id 			= models.AutoField(primary_key=True)
-	fname 		= models.CharField(unique=True,max_length=30,blank=False)
+	items		= models.CharField(unique=True,max_length=30,blank=False)
+	menu_id 	= models.IntegerField(blank=False,default=0)
 	#category 	= models.CharField(max_length=50,blank=False)
 
 	def __str__(self):
-		return self.fname
+		return self.items
 
 class Menu(models.Model):
 	id 		 = models.AutoField(primary_key=True)
@@ -55,8 +56,8 @@ class Menu(models.Model):
 	quantity = models.IntegerField(blank=False,default=0)
 
 	def __str__(self):
-		return self.item_id.fname+' - '+str(self.price)
-	
+		return self.item_id.items+' - '+str(self.price)
+
 
 class Order(models.Model):
 	id 				= models.AutoField(primary_key=True)
@@ -89,7 +90,7 @@ class Order(models.Model):
 
 class orderItem(models.Model):
 	id 			= models.AutoField(primary_key=True)
-	item_id 	= models.ForeignKey(Menu ,on_delete=models.CASCADE)
+	menu_id 	= models.ForeignKey(Menu ,on_delete=models.CASCADE)
 	ord_id  	= models.ForeignKey(Order,on_delete=models.CASCADE)
 	quantity 	= models.IntegerField(default=0)
 	
@@ -97,10 +98,7 @@ class orderItem(models.Model):
 		return str(self.id) 
 
 
-#class Employee(models.Model):
-#    user        = models.OneToOneField(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
-#    Emp_name    = models.CharField(max_length=20,blank=False)
-#    Phone_no    = models.IntegerField(default=0)
+
 
 
 

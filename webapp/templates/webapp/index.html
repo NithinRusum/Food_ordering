@@ -18,11 +18,24 @@
 
 <style type="text/css">
   .big-banner{
-    background-image: url('/static/webapp/images/homeimage.jpg');
-   /* background-repeat: no-repeat;
-    
-    background-size: cover;
-  */
+    background-image: url('/static/webapp/images/homeimage9.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size: cover;
+     background-size: 600px,600px;
+    -webkit-animation: backgroundScroll 60s linear 5;
+    -webkit-animation-fill-mode: forwards;
+    animation: backgroundScroll 60s linear 5;
+    animation-fill-mode: forwards;
+   }
+  @keyframes backgroundScroll {
+    from {background-position: 0 0;}
+    to {background-position: -180px 0px;}
+  }
+  @-webkit-keyframes backgroundScroll {
+    from {background-position: 0 0;}
+    to {background-position: -180px 0px;}
   }
   .i-am-center{
     margin-left:26%; max-width: 100%;
@@ -53,7 +66,7 @@
          <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
         <ul class="navbar-nav ml-auto text-center">
             <li class="nav-item active">
-                <a class="nav-link text-light" href="{% url 'restuarant'%}">&nbsp; <strong>For Customer</strong> </a>
+                <a class="nav-link text-light" href="{% url 'restuarant'%}">&nbsp; <strong style="color: yellow; font-size: 25px">For Customer</strong> </a>
             </li>
         </ul>
     </div>
@@ -62,18 +75,11 @@
     <div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2">
         <ul class="navbar-nav mr-auto text-center">
             <li class="nav-item" >
-                <a class="nav-link text-light" href="{% url 'rlogin'%}"><font size="3">&nbsp;<strong>For Restaurants</strong> </a>
+                <a class="nav-link text-light" href="{% url 'rlogin'%}"><font size="3">&nbsp;<strong style="color: yellow; font-size: 25px; ">For Restaurants</strong> </a>
             </li>
         </ul>
     </div>
-    <!--<div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
-        <ul class="navbar-nav ml-auto text-center">
-            <li class="nav-item active">
-                <a class="nav-link text-light" href="{% url 'login'%}">&nbsp; <strong>For Employee</strong> </a>
-            </li>
-        </ul>
-    </div>
-  -->
+    
 </div>
 
 </nav>
@@ -84,231 +90,19 @@
       <div class="col">
         <div class="col4 text-light ">
 
-          <h1 style="font-style:italic; font-family:sans-serif; color:slateblue "><strong>Door Delight !</strong></h1>
-          <h2><strong style="color: dimgray"> Party Time <br>
+          <h1 style="font-style:italic; font-family:sans-serif; color:slateblue "><strong style="background-color:#7FFF00">Door Delight !</strong></h1>
+          <h2><strong style="color: yellow; background-color:#00008B" > Party Time <br>
            Just a few clicks away</strong></h2>
         </div>
       <br>
-      <!--
-      <button type="button" class="btn btn-success btn-lg"><strong><a href="{% url 'register'%}" class="text-light">Register</a></strong></button>
-      -->
       </div>
         <div class="col">
-        <!--
-          <div class="col4 text-light">
-            <h2 style="font-style:italic; font-family:sans-serif;color: coral "><strong>  Party Time!!</strong></h2>
-          <h3><strong>Bringing People Together</strong></h3>
         </div>
-        <br>
-      -->
-        <!--<button type="button" class="btn btn-success btn-lg"><strong><a href="{% url 'rregister'%}" class="text-light">Join Us</a></strong></button>-->
-      </div>
       </div>
     </div>
 
   </div>
 </div>
-<!--
-<div class="content">
-    <div class="ordering-section" id="Order">
-      <div class="container">
-        <div class="ordering-section-head text-center wow bounceInRight" data-wow-delay="0.4s">
-          <h3>Ordering food was never so easy</h3>
-          <div class="dotted-line">
-            <h4>Just 4 steps to follow </h4>
-          </div>
-        </div>
-        <div class="i-am-center">
-        <div class="row ">
-          <div class="col-sm-2 col-md-2">
-            <div class="thumbnail borders text-light">
-              <p>Choose <span>Your Restaurant</span></p>
-            </div>
-          </div>
-          <div class="col-sm-2 col-md-2 ">
-            <div class="thumbnail borders text-light">
-            
-              <p>Order  <span>Your Cuisine</span></p>
-            </div>
-          </div>
-          <div class="col-sm-2 col-md-2">
-            <div class="thumbnail borders text-light" >
-              <p>Pay   <span> online </span></p>
-              <label></label>
-            </div>
-          </div>
-          <div class="col-sm-2 col-md-2">
-            <div class="thumbnail borders text-light">
-              <p>Enjoy <span>your food </span></p>
-              <label></label>
-              
-            </div>
-          </div>
-          <div class="clearfix"></div>
-      </div>
-      </div>
-    </div>
-    </div>
-  </div>
-
-<div class="container col-md-9">
-    <div class="top-restaurent-head">
-            <h3>Top Restaurants</h3>
-    </div> 
-    <div class="row">
-       
-               <div class="col-md-4 ">
-                    <div class="thumbnail">
-                      <a href="">
-                      <img src="/static/webapp/images/restaurent-2.jpg" class="img-responsive" alt="" />
-                    </a>
-
-                    </div>
-              </div>
-              <br>
-               <div class="col-md-4 ">
-                    <div class="thumbnail">
-                      <a href="">
-                      <img src="/static/webapp/images/restaurent-3.jpg" class="img-responsive" alt="" />
-                    </a>
-
-                    </div>
-              </div>
-              <br>
-               <div class="col-md-4 ">
-                    <div class="thumbnail">
-                      <a href="">
-                      <img src="/static/webapp/images/restaurent-4.jpg" class="img-responsive" alt="" />
-                    </a>
-
-                    </div>
-              </div>
-              <br>
-               <div class="col-md-4 ">
-                    <div class="thumbnail">
-                      <a href="">
-                      <img src="/static/webapp/images/restaurent-5.jpg" class="img-responsive" alt="" />
-                    </a>
-
-                    </div>
-              </div>
-              <br>
-               <div class="col-md-4 ">
-                    <div class="thumbnail">
-                      <a href="">
-                      <img src="/static/webapp/images/restaurent-6.jpg" class="img-responsive" alt="" />
-                    </a>
-
-                    </div>
-              </div>
-                    
-    </div>
-
-  </div>
-
-<br>
-<br>
-<div class="container col-md-9">
-  <div class="top-cuisine-head">
-      <h3>Top Cuisines</h3>
-  </div>
-  <div class="row">
-     <div class="col-md-4 ">
-                    <div class="thumbnail">
-                      <a href="">
-                      <img src="/static/webapp/images/cuisine1.jpg" class="img-responsive" alt="" />
-                    </a>
-                    </div>
-                    <div class="caption border col-sm-4">
-                        <h5 class="text-secondary"><strong>Pizza</strong></h5>
-                    </div>
-              </div>
-               <div class="col-md-4 mb-3">
-                    <div class="thumbnail">
-                      <a href="">
-                      <img src="/static/webapp/images/cuisine2.jpg" class="img-responsive" alt="" />
-                    </a>
-                    </div>
-                    <div class="caption border col-sm-4">
-                        <h5 class="text-secondary"><strong>Burger</strong></h5>
-                    </div>
-              </div>
-
-               <div class="col-md-4 ">
-                    <div class="thumbnail">
-                      <a href="">
-                      <img src="/static/webapp/images/cuisine3.jpg" class="img-responsive" alt="" />
-                    </a>
-                    </div>
-                    <div class="caption border col-sm-6">
-                        <h5 class="text-secondary"><strong>Dough Nut</strong></h5>
-                    </div>
-              </div>
-               <div class="col-md-4 mb-3">
-                    <div class="thumbnail">
-                      <a href="">
-                      <img src="/static/webapp/images/cuisine4.jpg" class="img-responsive" alt="" />
-                    </a>
-                    </div>
-                    <div class="caption border col-sm-4">
-                        <h5 class="text-secondary"><strong>Curry</strong></h5>
-                    </div>
-              </div>
-               <div class="col-md-4 ">
-                    <div class="thumbnail">
-                      <a href="">
-                      <img src="/static/webapp/images/cuisine5.jpg" class="img-responsive" alt="" />
-                    </a>
-                    </div>
-                    <div class="caption border col-sm-4">
-                        <h5 class="text-secondary"><strong>trips</strong></h5>
-                    </div>
-              </div>
-               <div class="col-md-4 ">
-                    <div class="thumbnail">
-                      <a href="">
-                      <img src="/static/webapp/images/cuisine6.jpg" class="img-responsive" alt="" />
-                    </a>
-                    </div>
-                    <div class="caption border col-md-6">
-                        <h5 class="text-secondary"><strong>Frawn Rice</strong></h5>
-                    </div>
-              </div>
-               <div class="col-md-4 ">
-                    <div class="thumbnail">
-                      <a href="">
-                      <img src="/static/webapp/images/cuisine7.jpg" class="img-responsive" alt="" />
-                    </a>
-                    </div>
-                    <div class="caption border col-md-4">
-                        <h5 class="text-secondary"><strong>Fingers</strong></h5>
-                    </div>
-              </div>
-                   <div class="col-md-6 ">
-                    <div class="thumbnail">
-                      <img src="/static/webapp/images/cuisine8.jpg" class="img-responsive" alt="" />
-                    <div class="caption border col-md-3">
-                        <h5 class="text-secondary"><strong>Cuisine</strong></h5>
-                    </div>
-                    </div>
-                    
-              </div>
-              <div class="clearfix"></div>
-  </div>
-</div>
-
-<br>
-<br>
-<br>
-<div class="footer">
-    <div class="container">
-         <div class="footer-copyright text-center py-3">© 2018 Copyright:
-        <a href="#"> MohdAsif</a>
-      
-    </div>
-  </div>
- -->
-        
 <script type="text/javascript" src="{%static 'webapp/js/jquery.min.js'%}">
   </script>
   <script type="text/javascript" src="{%static 'webapp/js/bootstrap.min.js'%}"></script>

@@ -28,20 +28,20 @@
          <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
         <ul class="navbar-nav ml-auto text-center">
             <li class="nav-item active">
-                <a class="nav-link text-light" href="{% url 'index' %}"><font size="3">&nbsp; <strong>Home</strong> </font></a>
+                <a class="nav-link text-light" href="{% url 'index' %}"><font size="4">&nbsp; <strong style ="font-family: 'Lucida Console', 'Courier New', monospace;color: yellow;">Home</strong> </font></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light" href="{% url  'mmenu' %}"><font size="3">&nbsp;<strong>Menu </strong></font></a>
+                <a class="nav-link text-light" href="{% url  'mmenu' %}"><font size="4">&nbsp;<strong style ="font-family: 'Lucida Console', 'Courier New', monospace;color: yellow;">Menu </strong></font></a>
             </li>
              <li class="nav-item">
-                <a class="nav-link text-light" href="{% url  'orderlist' %}"><font size="3">&nbsp;<strong>Orders</strong></font></a>
+                <a class="nav-link text-light" href="{% url  'orderlist' %}"><font size="4">&nbsp;<strong style ="font-family: 'Lucida Console', 'Courier New', monospace;color: yellow;">Orders</strong></font></a>
             </li>
             
         </ul>
     </div>
     <div class="mx-auto my-2 order-0 order-md-1 position-relative">
         <a class="mx-auto" href="#">
-            <!--<img  src="/static/webapp/images/logonew.png" style="height: 90px;width: 170px;" alt="Home" class="rounded-circle img-responsive">-->
+            
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
             <span class="navbar-toggler-icon"></span>
@@ -51,17 +51,17 @@
         <ul class="navbar-nav mr-auto text-center">
           {% if request.user.is_authenticated %}
             <li class="nav-item">
-                <a class="nav-link text-light " href="{% url 'logout' %}"><font size="3"> &nbsp;<span aria-hidden="true"></span><strong>LogOut </strong> </font></a>
+                <a class="nav-link text-light " href="{% url 'logout' %}"><font size="4"> &nbsp;<span aria-hidden="true"></span><strong style ="font-family: 'Lucida Console', 'Courier New', monospace;color: yellow;">LogOut </strong> </font></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light " href="{%url 'rprofile' %}"><font size="3"> &nbsp;<span aria-hidden="true"></span><strong>Profile</strong></font></a>
+                <a class="nav-link text-light " href="{%url 'rprofile' %}"><font size="4"> &nbsp;<span aria-hidden="true"></span><strong style ="font-family: 'Lucida Console', 'Courier New', monospace;color: yellow;">Profile</strong></font></a>
             </li>
           {% else %}
             <li class="nav-item">
-                <a class="nav-link text-light " href="{% url 'rlogin' %}"><font size="3">&nbsp;<span aria-hidden="true"></span> <strong>LogIn</strong></font></a>
+                <a class="nav-link text-light " href="{% url 'rlogin' %}"><font size="4">&nbsp;<span aria-hidden="true"></span> <strong style ="font-family: 'Lucida Console', 'Courier New', monospace;color: yellow;">LogIn</strong></font></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light " href="{% url 'rregister' %}"><font size="3">&nbsp;<span aria-hidden="true"></span> <strong>Join Us</strong></font></a>
+                <a class="nav-link text-light " href="{% url 'rregister' %}"><font size="4">&nbsp;<span aria-hidden="true"></span> <strong style ="font-family: 'Lucida Console', 'Courier New', monospace;color: yellow;">Join Us</strong></font></a>
             </li>
             {% endif %}
         </ul>
@@ -75,20 +75,15 @@
 <br>
 <br>
 <br>
-
-
-
-
-<!--
-<div class="footer">
-    <div class="container-fluid">
-    <div class="footer-copyright text-center py-3">© 2018 Copyright:
-        <a href="#"> MohdAsif</a>
-      </div>
-    
-  </div>
-</div>
--->
+<style type="text/css">
+        body { 
+         background-image: url('/static/webapp/images/homeimage8.jpg'); no-repeat center center fixed; 
+         -webkit-background-size: cover;
+         -moz-background-size: cover;
+         -o-background-size: cover;
+         background-size: cover;
+        }
+</style>
 
 <script type="text/javascript" src="{%static 'webapp/js/jquery.min.js'%}">
   </script>

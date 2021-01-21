@@ -122,10 +122,10 @@ def restuarantMenu(request,pk=None):
 
 	items =[]
 	for i in menu:
-		item = Item.objects.filter(fname=i.item_id)
+		item = Item.objects.filter(items=i.item_id)
 		for content in item:
 			temp=[]
-			temp.append(content.fname)
+			temp.append(content.items)
 			#temp.append(content.category)
 			temp.append(i.price)
 			temp.append(i.id)
@@ -164,14 +164,14 @@ def checkout(request):
 			it = Menu.objects.filter(id=int(x))
 			if len(it):
 				oiid=orderItem()
-				oiid.item_id=it[0]
+				oiid.menu_id=it[0]
 				oiid.quantity=int(y)
 				oid.r_id=it[0].r_id
 				oid.save()
 				oiid.ord_id =oid
 				oiid.save()
 				totalprice += int(y)*it[0].price
-				item.append(it[0].item_id.fname)
+				item.append(it[0].item_id.items)
 				it[0].quantity = it[0].quantity - y
 				it[0].save()
 				item.append(y)
@@ -312,7 +312,7 @@ def menuManipulation(request):
 	for y in menuitems:
 		citem = []
 		citem.append(y.id)
-		citem.append(y.fname)
+		citem.append(y.items)
 		items.append(citem)
 
 	context={
@@ -364,9 +364,9 @@ def orderlist(request):
 		items = []
 		for item in items_list:
 			citem = []
-			citem.append(item.item_id)
+			citem.append(item.menu_id)
 			citem.append(item.quantity)
-			menu = Menu.objects.filter(id=item.item_id.id)
+			menu = Menu.objects.filter(id=item.menu_id.id)
 			citem.append(menu[0].price*item.quantity)
 			menu = 0
 			items.append(citem)
